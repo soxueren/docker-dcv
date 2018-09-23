@@ -42,7 +42,7 @@ echo  /usr/lib64/nvidia > /etc/ld.so.conf.d/nice-dcv-2017.1-5870-el7.x86_64.conf
 ```
 #### 重启NICE DCV server
 ```
-systemctl restart dcvserver
+dcvserver --display=1 --create-session -d
 ```
 #### dcv测试
 ```
