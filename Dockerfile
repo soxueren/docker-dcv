@@ -9,7 +9,7 @@ RUN groupadd viewer && \
     
 RUN echo viewertest | passwd --stdin viewer
 
-RUN yum install -y perl wget xauth xkeyboard-config tigervnc-server pciutils xterm expect
+RUN yum install -y perl wget xauth xkeyboard-config tigervnc-server pciutils xterm expect dkms
 
 ## install dcv
 RUN wget https://d1uj6qtbmh3dt5.cloudfront.net/server/nice-dcv-2017.1-5870-el7.tgz
@@ -28,6 +28,8 @@ RUN tar zxvf nice-dcv-2017.1-5870-el7.tgz && \
 	 
 ## enable dcvserver
 RUN chkconfig dcvserver on && systemctl list-unit-files
+
+RUN dcvusbdriverinstaller
 
 ## clean cache
 RUN rm -rf nice-dcv-2017.1-5870-el7.tgz && \
