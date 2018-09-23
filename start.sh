@@ -2,16 +2,22 @@
 
 startfile="/root/.vnc/xstartup"
 
+echo "
+default users:
+  root
+  viewer
+"
+
 if [ -z "$ROOT_PASSWD" ]; then
-ROOT_PASSWD=vnctest
-echo "default set ROOT_PASSWD is vnctest"
+ROOT_PASSWD=Test@402
+echo "default set ROOT_PASSWD is Test@402"
 fi
 
 if [ -z "$VIEWER_PASSWD" ]; then
-VIEWER_PASSWD=vnctest
-echo "default set VIEWER_PASSWD is vnctest"
+VIEWER_PASSWD=Test@402
+echo "default set VIEWER_PASSWD is Test@402"
 fi
-
+#start vncserver
 if [ ! -f "$startfile" ]; then
 echo "first start vncserver,please set your env: ROOT_PASSWD and VIEWER_PASSWD for dcvserver"
 /init_commond.exp  "$ROOT_PASSWD" "$VIEWER_PASSWD"
@@ -20,7 +26,7 @@ vncserver -kill :1 && cp -f /tmp/xstartup /root/.vnc/xstartup &&  vncserver :1
 else
 vncserver -kill :1 && cp -f /tmp/xstartup /root/.vnc/xstartup &&  vncserver :1
 fi
-
+echo "vncserver is running"
 
 if [ -z "$1" ] || [[ $1 =~ -h|--help ]]; then
 echo "
