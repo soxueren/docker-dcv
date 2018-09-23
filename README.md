@@ -40,7 +40,7 @@ Sep 23 06:20:14 30793f8fc873 systemd[1]: Started NICE DCV server daemon.
 ```
 echo  /usr/lib64/nvidia > /etc/ld.so.conf.d/nice-dcv-2017.1-5870-el7.x86_64.conf && ldconfig
 ```
-#### 重启NICE DCV server
+#### 启动NICE DCV server
 ```
 dcvserver --display=1 --create-session -d
 ```
