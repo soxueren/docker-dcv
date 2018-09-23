@@ -1,0 +1,16 @@
+VNCSERVERS="1:root"
+VNCSERVERARGS[1]="-geometry 1024x768  -alwaysshared -depth 24"
+
+VNCSERVERS="2:root"
+VNCSERVERARGS[2]="-geometry 1024x768  -alwaysshared -depth 24"
+
+VNCSERVERS="3:root"
+VNCSERVERARGS[3]="-geometry 1024x768  -alwaysshared -depth 24"
+
+VNCSERVERS="4:viewer"
+VNCSERVERARGS[4]="-geometry 1024x768  -alwaysshared -depth 24"
+
+
+VNCSERVERS="5:viewer"
+VNCSERVERARGS[5]="-geometry 1024x768  -alwaysshared -depth 24"
+

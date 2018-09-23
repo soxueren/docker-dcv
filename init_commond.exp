@@ -1,0 +1,27 @@
+#!/usr/bin/expect
+
+if {$argc < 2} {
+    #do something
+    send_user "usage: $argv0 <root_pwd> <viewer_pwd>"
+    exit
+}
+
+set timeout -1
+set root_pwd [lindex $argv 0] 
+set viewer_pwd [lindex $argv 1] 
+
+# set root password
+spawn vncserver
+expect "Password:" {send "${root_pwd}\r"}
+expect "Verify:" {send "${root_pwd}\r"}
+
+expect "*password (y/n)?" {send "y\r"}
+
+expect "Password:" {send "${viewer_pwd}\r"}
+expect "Verify:" {send "${viewer_pwd}\r"}
+
+#  
+send "exit\r"
+send "exit\r"
+expect eof
+

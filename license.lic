@@ -1,0 +1,27 @@
+# the license file must be named license.lic
+# the license file must reside under ${DCV_ROOT}/license
+
+
+###############################################################################
+# 
+# NICE DCV 2017 - Demo License
+# 
+# 
+# License:      8915
+# Generated on: 2018-09-20 07:35:59 by Karsten Gaier
+# Expiring on:  2018-10-20
+# Owner:        hy.
+# 
+# This license is for DEMO purpose only, NOT for production.
+# 
+# 
+###############################################################################
+
+LICENSE nice dcv 2017 20-oct-2018 uncounted hostid=ANY type=demo
+ _ck=731efc2d5f sig="60PG4508XX40RTVH0Y9GDYCRKRE9RQJQG77TBK822M0B9HVH
+ SSNMN1Q8HXMAWMH9ABK0WAK7WY8G"
+LICENSE nice dcv-gl 2017 20-oct-2018 uncounted hostid=ANY type=demo
+ _ck=731efcd764 sig="60P0451U8DKWQRC9N7X7UTJPPQRP9VDD247R2S022HG1AXBQ
+ CG7DFST0QEPXVUKKFQJD15K988"
+
+####################### END OF DCV LICENSE ##################################
