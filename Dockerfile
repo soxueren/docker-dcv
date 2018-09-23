@@ -22,7 +22,7 @@ RUN cd nice-dcv-2017.1-5870-el7 && \
 	 
 ## enable dcvserver
 RUN chkconfig dcvserver on && systemctl list-unit-files
-RUN echo 402@sjgs | passwd --stdin root		 
+RUN echo roottest | passwd --stdin root		 
 
 RUN groupadd viewer && \
     useradd -m -r viewer  -g viewer
