@@ -30,7 +30,7 @@ Sep 23 06:20:14 30793f8fc873 systemd[1]: Started NICE DCV server daemon.
 ```
 #### 1、安装nvidia驱动
 ```
-
+./NVIDIA-Linux_x86_64-375.26.run
 ```
 #### 2、docker run 增加参数
 ```
