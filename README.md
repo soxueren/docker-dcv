@@ -28,26 +28,27 @@ Sep 23 06:20:13 30793f8fc873 dcvserver[126]: libnvidia-ifr.so.1: cannot open sha
 Sep 23 06:20:13 30793f8fc873 dcvserver[126]: Failed to load module: /usr/lib64/dcv/modules/libdcvnvifr.so
 Sep 23 06:20:14 30793f8fc873 systemd[1]: Started NICE DCV server daemon.
 ```
-1、安装nvidia驱动
+#### 1、安装nvidia驱动
 ```
 
 ```
-2、#docker run 增加参数
+#### 2、docker run 增加参数
 ```
 -v /usr/lib:/usr/lib64/nvidia 
 ```
-3、配置nvidia-driver搜索路径
+#### 3、配置nvidia-driver搜索路径
 ```
 echo  /usr/lib64/nvidia > /etc/ld.so.conf.d/nice-dcv-2017.1-5870-el7.x86_64.conf && ldconfig
 ```
-重启NICE DCV server
+#### 重启NICE DCV server
 ```
 systemctl restart dcvserver
 ```
-测试
+#### dcv测试
 ```
 dcvgldiag
 dcvgltest
 dcvsessionlauncher
-```
 dcvstartx
+```
+
