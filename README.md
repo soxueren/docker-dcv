@@ -6,13 +6,19 @@
 - vncviewer进入默认启用xterm
 - dcv服务启用，需要nvidia-docker run启动，
 ## build容器
+```
 git clone https://github.com/soxueren/docker-vnc-dcv-nvidia-centos.git
 cd docker-vnc-dcv-nvidia-centos
 docker build -t docker-vnc-dcv .
-或者docker pull soxueren/docker-vnc-dcv
+```
+或者
+```
+docker pull soxueren/docker-vnc-dcv
+```
 ## 运行容器
+```
 nvidia-docker run -it   --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443   -v /usr/lib:/usr/lib64/nvidia docker-vnc-dcv
-
+```
 ## 出现错误解决方法
 ```
 Sep 23 06:20:07 30793f8fc873 systemd[1]: Starting NICE DCV server daemon...
