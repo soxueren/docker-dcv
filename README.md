@@ -1,5 +1,5 @@
 # docker-vnc-dcv from nvidia-centos base image
-基于nvidia/cuda:8.0-runtime-centos7镜像制作集tigervnc-server、nice-dcv-2017的docker镜像
+基于nvidia/cuda:8.0-runtime-centos7镜像制作包括tigervnc-server、nice-dcv-2017的docker镜像
 - 默认安装 perl wget xauth xkeyboard-config  pciutils xterm expect工具
 - 交互shell用到expect，请参考相关教程
 - nice-dcv-2017使用2018年10月到期的license.lic
