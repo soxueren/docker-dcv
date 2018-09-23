@@ -4,7 +4,7 @@
 - 交互shell用到expect，请参考相关教程
 - nice-dcv-2017使用2018年10月到期的license.lic
 - vncviewer进入默认启用xterm
-- dcv服务启用，需要nvidia-docker run启动，
+- dcv服务启用，需要nvidia-driver及nvidia-docker，详情参见[nvidia-docker](https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made-easy/)
 ## build容器
 ```
 git clone https://github.com/soxueren/docker-vnc-dcv-nvidia-centos.git
