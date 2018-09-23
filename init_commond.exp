@@ -20,8 +20,16 @@ expect "*password (y/n)?" {send "y\r"}
 expect "Password:" {send "${viewer_pwd}\r"}
 expect "Verify:" {send "${viewer_pwd}\r"}
 
+#set system password
+spawn passwd root
+expect "New password:" {send "${root_pwd}\r"}
+expect "Retype new password:" {send "${root_pwd}\r"}
+
+spawn passwd viewer
+expect "New password:" {send "${viewer_pwd}\r"}
+expect "Retype new password:" {send "${viewer_pwd}\r"}
+
 #  
 send "exit\r"
 send "exit\r"
 expect eof
-
