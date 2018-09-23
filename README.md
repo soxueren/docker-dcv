@@ -44,6 +44,10 @@ echo  /usr/lib64/nvidia > /etc/ld.so.conf.d/nice-dcv-2017.1-5870-el7.x86_64.conf
 ```
 dcvserver --display=1 --create-session -d
 ```
+或后台运行
+```
+nohup dcvserver --display=1 --create-session -d &
+```
 #### dcv测试
 ```
 dcvgldiag
