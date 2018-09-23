@@ -23,6 +23,9 @@ Sep 23 06:20:13 30793f8fc873 dcvserver[126]: Failed to load module: /usr/lib64/d
 Sep 23 06:20:14 30793f8fc873 systemd[1]: Started NICE DCV server daemon.
 ```
 1、安装nvidia驱动
+```
+
+```
 2、#docker run 增加参数
 ```
 -v /usr/lib:/usr/lib64/nvidia 
