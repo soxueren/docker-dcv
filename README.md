@@ -50,9 +50,6 @@ nohup dcvserver --display=1 --create-session -d &
 ```
 #### dcv测试
 ```
-dcvgldiag
 dcvgltest
-dcvsessionlauncher
-dcvstartx
 ```
 <有问题请QQ:250029975>
