@@ -3,13 +3,19 @@ FROM nvidia/cuda:8.0-runtime-ubuntu16.04
 ## install tools
 RUN apt-get install -y perl wget xauth xkeyboard-config tigervnc-server pciutils xterm expect
 
+## download dcv  pcsc-lite-libs dkms
 
+## localinstall pcsc-lite-libs
+
+## localinstall nice-dcv-server
 
 ## add viewer user
 RUN groupadd viewer && \
     useradd -m -r viewer  -g viewer
 	
-	
+## clean cache
+
+
 RUN echo "default start vncserver ......... " > /vncserver.log
 
 ADD ./xstartup /tmp/xstartup
