@@ -3,8 +3,8 @@
 - 默认安装 perl wget xauth xkeyboard-config  pciutils xterm expect工具
 - 交互shell用到expect，请参考相关教程
 - nice-dcv-2017使用2018年10月到期的license.lic
-- vncviewer进入默认启用xterm
-- dcv服务启用，需要nvidia-driver及nvidia-docker，详情参见[nvidia-docker](https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made-easy/)
+- vnc默认启用 :1(5901端口)，vncviewer进入默认启用xterm
+- 启用dcv，需要nvidia-driver及nvidia-docker，详情参见[nvidia-docker](https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made-easy/)
 ## build容器
 ```
 git clone https://github.com/soxueren/docker-vnc-dcv-nvidia-centos.git
