@@ -21,12 +21,10 @@ nvidia-docker run -it   --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443
 ```
 ## 出现错误解决方法
 ```
-Sep 23 06:20:07 30793f8fc873 systemd[1]: Starting NICE DCV server daemon...
 Sep 23 06:20:13 30793f8fc873 dcvserver[126]: libcuda.so.1: cannot open shared object file: No such file or directory
 Sep 23 06:20:13 30793f8fc873 dcvserver[126]: Failed to load module: /usr/lib64/dcv/modules/libdcvnvenc.so
 Sep 23 06:20:13 30793f8fc873 dcvserver[126]: libnvidia-ifr.so.1: cannot open shared object file: No such file or directory
 Sep 23 06:20:13 30793f8fc873 dcvserver[126]: Failed to load module: /usr/lib64/dcv/modules/libdcvnvifr.so
-Sep 23 06:20:14 30793f8fc873 systemd[1]: Started NICE DCV server daemon.
 ```
 #### 1、安装nvidia驱动
 ```
