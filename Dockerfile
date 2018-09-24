@@ -40,6 +40,7 @@ ADD ./start.sh /start.sh
 
 RUN chmod +x /start.sh
 RUN chmod +x /init_commond.exp
+RUN chmod +x /tmp/xstartup
 
 EXPOSE 5901 5902 5903 5904 5905  8443
 
