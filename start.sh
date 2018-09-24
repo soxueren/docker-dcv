@@ -21,10 +21,10 @@ fi
 if [ ! -f "$startfile" ]; then
 echo "first start vncserver,please set your env: ROOT_PASSWD and VIEWER_PASSWD for dcvserver"
 /init_commond.exp  "$ROOT_PASSWD" "$VIEWER_PASSWD"
-vncserver -kill :1 && cp -f /tmp/xstartup /root/.vnc/xstartup &&  vncserver :1
+vncserver -kill :1 && cp -af /tmp/xstartup /root/.vnc/xstartup &&  vncserver :1
  # && tail -f /vncserver.log
 else
-vncserver -kill :1 && cp -f /tmp/xstartup /root/.vnc/xstartup &&  vncserver :1
+vncserver -kill :1 && cp -af /tmp/xstartup /root/.vnc/xstartup &&  vncserver :1
 fi
 echo "vncserver is running"
 
