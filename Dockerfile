@@ -22,7 +22,10 @@ RUN tar zxvf nice-dcv-2017.1-5870-el7.tgz && \
 ## add viewer user
 RUN groupadd viewer && \
     useradd -m -r viewer  -g viewer
-	
+    
+## install xorg-x11-server-Xorg, xorg-x11-server-utils, xorg-x11-utils	
+RUN yum install -y xorg-x11-server-Xorg xorg-x11-server-utils xorg-x11-utils
+
 ## clean cache
 RUN rm -rf nice-dcv-2017.1-5870-el7.tgz && \
     rm -rf nice-dcv-2017.1-5870-el7 && \
