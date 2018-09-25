@@ -7,9 +7,9 @@
 - 启用dcv，需要nvidia-driver及nvidia-docker，详情参见[nvidia-docker](https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made-easy/)
 ## build容器
 ```
-git clone https://github.com/soxueren/docker-vnc-dcv-nvidia-centos.git
-cd docker-vnc-dcv-nvidia-centos
-docker build -t docker-vnc-dcv .
+git clone https://github.com/soxueren/docker-dcv-vnc.git
+cd docker-dcv-vnc
+docker build -t docker-dcv-vnc .
 ```
 或者
 ```
@@ -17,7 +17,7 @@ docker pull soxueren/docker-vnc-dcv
 ```
 ## 运行容器
 ```
-nvidia-docker run -it   --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443   -v /usr/lib:/usr/lib64/nvidia docker-vnc-dcv
+nvidia-docker run -it   --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443   -v /usr/lib:/usr/lib64/nvidia docker-dcv-vnc
 ```
 ## 出现错误解决方法
 ```
