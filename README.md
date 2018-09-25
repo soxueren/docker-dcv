@@ -7,7 +7,7 @@
 - 启用dcv，需要nvidia-driver及nvidia-docker，详情参见[nvidia-docker](https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made-easy/)
 ## build容器
 ```
-git clone https://github.com/soxueren/docker-vnc-dcv-nvidia-centos.git
+git clone https://github.com/soxueren/docker-dcv-vnc.git
 cd docker-vnc-dcv-nvidia-centos
 docker build -t docker-vnc-dcv .
 ```
