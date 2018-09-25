@@ -17,7 +17,7 @@ docker pull soxueren/docker-vnc-dcv
 ```
 ## 运行容器
 ```
-nvidia-docker run -it   --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443   -v /usr/lib:/usr/lib64/nvidia docker-dcv-vnc
+nvidia-docker run -it  --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443  docker-dcv-vnc:8.0-runtime-centos7
 ```
 ## 出现错误解决方法
 ```
