@@ -11,7 +11,7 @@ git clone https://github.com/soxueren/docker-dcv.git
 cd docker-dcv
 docker build -t docker-dcv .
 ```
-或者
+或
 ```
 docker pull soxueren/docker-dcv:7.0-runtime-centos7
 ```
