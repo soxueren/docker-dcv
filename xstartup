@@ -4,8 +4,5 @@
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
 
 xsetroot -solid grey
+nohup dcvserver --display=1 --create-session >&1 &
 xterm -geometry 160x48+10+10 -ls -title "$VNCDESKTOP Desktop" &
-
-
-
-
