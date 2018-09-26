@@ -7,9 +7,9 @@
 - 启用dcv，需要nvidia-driver及nvidia-docker，详情参见[nvidia-docker](https://devblogs.nvidia.com/nvidia-docker-gpu-server-application-deployment-made-easy/)
 ## build容器
 ```
-git clone https://github.com/soxueren/docker-dcv-vnc.git
-cd docker-dcv-vnc
-docker build -t docker-dcv-vnc .
+git clone https://github.com/soxueren/docker-dcv.git
+cd docker-dcv
+docker build -t docker-dcv .
 ```
 或者
 ```
@@ -17,7 +17,7 @@ docker pull soxueren/docker-dcv-vnc:7.0-runtime-centos7
 ```
 ## 运行容器
 ```
-nvidia-docker run -it --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443 docker-dcv-vnc:7.0-runtime-centos7
+docker run -it --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443 docker-dcv-vnc:7.0-runtime-centos7
 ```
 ## 出现错误解决方法
 ```
@@ -30,13 +30,50 @@ Sep 23 06:20:13 30793f8fc873 dcvserver[126]: Failed to load module: /usr/lib64/d
 ```
 ./NVIDIA-Linux_x86_64-375.26.run
 ```
-#### 2、docker run 增加参数
+#### 2、安装nvidia-docker2或者nvidia-docker-plugins
+#### CentOS 7 (docker-ce), RHEL 7.4/7.5 (docker-ce), Amazon Linux 1/2
+
+If you are **not** using the official `docker-ce` package on CentOS/RHEL, use the next section.
+
+```sh
+# If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers
+docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
+sudo yum remove nvidia-docker
+
+# Add the package repositories
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo | \
+  sudo tee /etc/yum.repos.d/nvidia-docker.repo
+
+# Install nvidia-docker2 and reload the Docker daemon configuration
+sudo yum install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+
+# Test nvidia-smi with the latest official CUDA image
+docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 ```
--v /usr/lib:/usr/lib64/nvidia 
-```
-#### 3、配置nvidia-driver搜索路径
-```
-echo  /usr/lib64/nvidia > /etc/ld.so.conf.d/nice-dcv-2017.1-5870-el7.x86_64.conf && ldconfig
+If `yum` reports a conflict on `/etc/docker/daemon.json` with the
+`docker` package, you need to use the next section instead.
+
+For docker-ce on `ppc64le`, look at the [FAQ](https://github.com/nvidia/nvidia-docker/wiki/Frequently-Asked-Questions#do-you-support-powerpc64-ppc64le).
+
+#### CentOS 7 (docker), RHEL 7.4/7.5 (docker)
+```sh
+# If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers
+docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
+sudo yum remove nvidia-docker
+
+# Add the package repositories
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.repo | \
+  sudo tee /etc/yum.repos.d/nvidia-container-runtime.repo
+
+# Install the nvidia runtime hook
+sudo yum install -y nvidia-container-runtime-hook
+
+# Test nvidia-smi with the latest official CUDA image
+# You can't use `--runtime=nvidia` with this setup.
+docker run --rm nvidia/cuda:9.0-base nvidia-smi
 ```
 #### 启动NICE DCV server
 ```
