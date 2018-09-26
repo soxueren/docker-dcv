@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-runtime-centos7
+FROM nvidia/cuda:7.0-runtime-centos7
 
 RUN cd ~
 ## install tools
