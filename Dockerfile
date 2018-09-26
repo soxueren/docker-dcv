@@ -20,8 +20,7 @@ RUN tar zxvf nice-dcv-2017.1-5870-el7.tgz && \
                         nice-dcv-gl-2017.1.366-1.el7.x86_64.rpm \
 	                nice-dcv-gltest-2017.1.198-1.el7.x86_64.rpm
 			
-## install xorg-x11-server-Xorg, xorg-x11-server-utils, xorg-x11-utils	
-RUN yum install -y xorg-x11-server-Xorg xorg-x11-server-utils xorg-x11-utils
+
 
 ## add viewer user
 RUN groupadd viewer && \
@@ -33,7 +32,8 @@ RUN rm -rf nice-dcv-2017.1-5870-el7.tgz  \
     pcsc-lite-libs-1.8.8-7.el7.x86_64.rpm \
     dkms-2.6.1-1.el7.noarch.rpm
 
-
+## install xorg-x11-server-Xorg, xorg-x11-server-utils, xorg-x11-utils	
+#RUN yum install -y xorg-x11-server-Xorg xorg-x11-server-utils xorg-x11-utils
 	
 RUN echo "default start vncserver ......... " > /vncserver.log
 
