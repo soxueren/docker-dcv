@@ -50,4 +50,15 @@ nohup dcvserver --display=1 --create-session &
 ```
 dcvgltest
 ```
+#### docker报错
+
+```
+docker: Error response from daemon: create nvidia_driver_352.79: create nvidia_driver_352.79: Error looking up volume plugin nvidia-docker: plugin not found.
+```
+解决方法
+
+```
+nvidia-docker volume setup
+docker volume ls
+```
 <有问题请QQ:250029975>
