@@ -1,4 +1,4 @@
-FROM centos:7
+FROM nvidia/cuda:7.0-runtime-centos7
 
 ## install tools
 RUN yum install -y perl wget xauth xkeyboard-config tigervnc-server pciutils xterm expect
