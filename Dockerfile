@@ -1,5 +1,6 @@
 FROM nvidia/cuda:7.0-runtime-centos7
 
+RUN cd ~
 ## install tools
 RUN yum install -y perl wget xauth xkeyboard-config tigervnc-server pciutils xterm expect
 
@@ -22,15 +23,15 @@ RUN tar zxvf nice-dcv-2017.1-5870-el7.tgz && \
 ## add viewer user
 RUN groupadd viewer && \
     useradd -m -r viewer  -g viewer
-    
-## install xorg-x11-server-Xorg, xorg-x11-server-utils, xorg-x11-utils	
-RUN yum install -y xorg-x11-server-Xorg xorg-x11-server-utils xorg-x11-utils
+   
+## remove download
+RUN rm -rf nice-dcv-2017.1-5870-el7.tgz  \
+    nice-dcv-2017.1-5870-el7  \
+    pcsc-lite-libs-1.8.8-7.el7.x86_64.rpm \
+    dkms-2.6.1-1.el7.noarch.rpm
 
-## clean cache
-RUN rm -rf nice-dcv-2017.1-5870-el7.tgz && \
-    rm -rf nice-dcv-2017.1-5870-el7 && \
-    rm -rf pcsc-lite-libs-1.8.8-7.el7.x86_64.rpm dkms-2.6.1-1.el7.noarch.rpm && \
-    yum clean all -y 
+## install xorg-x11-server-Xorg, xorg-x11-server-utils, xorg-x11-utils	
+#RUN yum install -y xorg-x11-server-Xorg xorg-x11-server-utils xorg-x11-utils
 	
 RUN echo "default start vncserver ......... " > /vncserver.log
 
