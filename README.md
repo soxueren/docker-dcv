@@ -1,4 +1,4 @@
-# docker-dcv-vnc from centos7 base image
+# docker-dcv from centos7 base image
 基于centos:7镜像制作包括tigervnc-server、nice-dcv-2017的docker镜像
 - 默认安装 perl wget xauth xkeyboard-config  pciutils xterm expect工具
 - 交互shell用到expect，请参考相关教程
