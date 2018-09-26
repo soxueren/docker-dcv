@@ -61,4 +61,7 @@ docker: Error response from daemon: create nvidia_driver_352.79: create nvidia_d
 nvidia-docker volume setup
 docker volume ls
 ```
+出现以下错误，请使用docker-dcv:centos7
+详情见：https://github.com/NVIDIA/nvidia-docker/issues/825
+
 <有问题请QQ:250029975>
