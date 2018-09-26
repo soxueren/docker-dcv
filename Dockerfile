@@ -1,5 +1,6 @@
 FROM nvidia/cuda:8.0-runtime-ubuntu16.04
 
+RUN cd ~
 ## install tools
 RUN apt-get install -y perl wget xauth xkeyboard-config tigervnc-server pciutils xterm expect
 
