@@ -13,11 +13,11 @@ docker build -t docker-dcv .
 ```
 或者
 ```
-docker pull soxueren/docker-dcv-vnc:7.0-runtime-centos7
+docker pull soxueren/docker-dcv:7.0-runtime-centos7
 ```
 ## 运行容器
 ```
-docker run -it --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443 docker-dcv-vnc:7.0-runtime-centos7
+docker run -it --rm --name=dcv  --privileged=true -p 5901:5901  -p 8443:8443 docker-dcv:7.0-runtime-centos7
 ```
 ## 出现错误解决方法
 ```
