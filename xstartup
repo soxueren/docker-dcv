@@ -4,8 +4,8 @@
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
 
 xsetroot -solid grey
-# start dcvserver daemon
-nohup dcvserver --display=1 --create-session >&1 &
-# start xterm
 xterm -geometry 160x48+10+10 -ls -title "$VNCDESKTOP Desktop" &
-# start other app
+
+
+
+

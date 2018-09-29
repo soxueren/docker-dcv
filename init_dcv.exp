@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+if {$argc < 1} {
+    #do something
+    send_user "usage: $argv0 <XDISPLAY> "
+    exit
+}
+
+set timeout -1
+set dcv_display [lindex $argv 0] 
+
+
+# set root password
+spawn  nohup dcvserver --display=$dcv_display --create-session >&1 &
+expect "*appending*to*" {send "\r\r"}
+
+
+#  
+send "exit\r"
+send "exit\r"
+expect eof
