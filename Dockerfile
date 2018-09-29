@@ -24,10 +24,10 @@ RUN groupadd viewer && \
     useradd -m -r viewer  -g viewer
 	
 ## clean cache
-RUN rm -rf nice-dcv-2017.1-5870-el7.tgz \
-           nice-dcv-2017.1-5870-el7  \
-           pcsc-lite-libs-1.8.8-7.el7.x86_64.rpm \
-	   dkms-2.6.1-1.el7.noarch.rpm 
+RUN rm -rf /nice-dcv-2017.1-5870-el7.tgz \
+           /nice-dcv-2017.1-5870-el7  \
+           /pcsc-lite-libs-1.8.8-7.el7.x86_64.rpm \
+	   /dkms-2.6.1-1.el7.noarch.rpm
 
 	
 RUN echo "default start vncserver ......... " > /vncserver.log
