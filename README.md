@@ -1,5 +1,5 @@
 # docker-dcv-vnc from nvidia-centos base image
-基于nvidia/cuda:7.0-runtime-centos7镜像制作包括tigervnc-server、nice-dcv-2017的docker镜像
+基于nvidia/cuda:8.0-runtime-centos7镜像制作包括tigervnc-server、nice-dcv-2017的docker镜像
 - 默认安装 perl wget xauth xkeyboard-config  pciutils xterm expect工具
 - 交互shell用到expect，请参考相关教程
 - nice-dcv-2017使用2018年10月到期的license.lic
@@ -9,9 +9,10 @@
 ```
 git clone https://github.com/soxueren/docker-dcv.git
 cd docker-dcv
+git checkout 7.0-runtime-centos7
 docker build -t docker-dcv .
 ```
-或
+或者
 ```
 docker pull soxueren/docker-dcv:7.0-runtime-centos7
 ```
@@ -75,6 +76,17 @@ sudo yum install -y nvidia-container-runtime-hook
 # You can't use `--runtime=nvidia` with this setup.
 docker run --rm nvidia/cuda:9.0-base nvidia-smi
 ```
+#### 2、docker run 增加参数
+```
+## 宿主机和容器进行卷映射
+-v /usr/lib64/nvidia:/usr/lib64/nvidia
+```
+#### 3、配置nvidia-driver搜索路径
+```
+## 在宿主机上将容器缺少的库拷贝到/usr/lib64/nvidia
+-e LD_LIBRARY_PATH=/usr/lib64/nvidia:${LD_LIBRARY_PATH}
+```
+
 #### 启动NICE DCV server
 ```
 dcvserver --display=1 --create-session
